@@ -5,48 +5,82 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Muspel Distribución y Logística SpA</title>
 <meta name="description" content="Muspel Distribución y Logística SpA: reparto de última milla en Osorno y alrededores.">
+<link rel="icon" href="logo.jpg">
 <style>
-:root{--azul:#12355b;--azul2:#1f5f99;--fondo:#f4f7fb;--texto:#1b2733}
+:root{--negro:#0a0a0b;--panel:#141416;--oro:#e2b44a;--oro2:#f6d77a;--plata:#d7dbe0;--gris:#9aa1aa}
 *{box-sizing:border-box}
-body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--fondo);color:var(--texto);line-height:1.6}
-header{background:var(--azul);color:#fff;padding:56px 20px;text-align:center}
-header h1{margin:0 0 8px;font-size:2rem}
-header p{margin:0;opacity:.9;font-size:1.1rem}
-main{max-width:860px;margin:0 auto;padding:28px 16px 48px}
-section{background:#fff;border-radius:12px;padding:22px;margin-bottom:18px;box-shadow:0 1px 4px rgba(0,0,0,.08)}
-h2{margin-top:0;color:var(--azul2)}
-ul{padding-left:20px}
-footer{text-align:center;color:#5b6b7a;font-size:.85rem;padding:20px}
-a{color:var(--azul2)}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--negro);color:var(--plata);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.65}
+nav{position:sticky;top:0;z-index:10;background:rgba(10,10,11,.92);backdrop-filter:blur(6px);border-bottom:1px solid #2a2a2e}
+.nav-in{max-width:980px;margin:0 auto;padding:8px 16px;display:flex;align-items:center;justify-content:space-between}
+.marca{display:flex;align-items:center;gap:10px;color:var(--oro);font-weight:800;letter-spacing:.12em;text-decoration:none}
+.marca img{height:42px;width:42px;border-radius:50%;object-fit:cover}
+.nav-in a.l{color:var(--plata);text-decoration:none;font-size:.9rem;margin-left:16px}
+.nav-in a.l:hover{color:var(--oro)}
+.hero{position:relative;overflow:hidden;text-align:center;padding:48px 16px 0;background:radial-gradient(ellipse at 50% 20%,#2a2110 0%,#0a0a0b 65%)}
+.hero .logo{width:min(380px,78vw);height:auto;border-radius:50%;display:block;margin:0 auto 6px;box-shadow:0 0 60px rgba(226,180,74,.25)}
+.hero h1{margin:14px 0 8px;font-size:clamp(1.4rem,4.5vw,2.2rem);color:#fff;letter-spacing:.02em}
+.hero p{margin:0 auto;max-width:560px;color:var(--gris);font-size:1.05rem}
+.ruta{position:relative;margin-top:30px;height:150px}
+.van{position:absolute;left:50%;bottom:22px;width:min(330px,70vw);transform:translateX(-50%);animation:rebote 1.4s ease-in-out infinite;filter:drop-shadow(0 0 14px rgba(226,180,74,.35))}
+.calle{position:absolute;left:0;right:0;bottom:0;height:24px;background:#111114;border-top:2px solid #2a2a2e}
+.calle::before{content:"";position:absolute;left:0;right:0;top:10px;height:3px;background:repeating-linear-gradient(90deg,var(--oro) 0 36px,transparent 36px 78px);animation:calle 1.2s linear infinite}
+@keyframes calle{to{background-position:-78px 0}}
+@keyframes rebote{50%{transform:translateX(-50%) translateY(-2px)}}
+@media (prefers-reduced-motion:reduce){.van,.calle::before{animation:none}}
+main{max-width:980px;margin:0 auto;padding:44px 16px 30px}
+h2{color:var(--oro);margin:0 0 16px;font-size:1.45rem;letter-spacing:.04em}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-bottom:44px}
+.card{background:var(--panel);border:1px solid #2a2a2e;border-top:3px solid var(--oro);border-radius:12px;padding:22px}
+.card h3{margin:0 0 8px;color:#fff;font-size:1.1rem}
+.card p{margin:0;color:var(--gris)}
+.aviso{background:linear-gradient(135deg,#1b1608,#141416);border:1px solid #4a3a14;border-radius:12px;padding:22px}
+.aviso strong{color:var(--oro2)}
+footer{text-align:center;color:#6b727b;font-size:.85rem;padding:26px 16px 34px;border-top:1px solid #1d1d20}
 </style>
 </head>
 <body>
-<header>
+<nav><div class="nav-in">
+  <a class="marca" href="#"><img src="logo.jpg" alt=""><span>MUSPEL</span></a>
+  <div><a class="l" href="#servicios">Servicios</a><a class="l" href="#avisos">Avisos</a></div>
+</div></nav>
+
+<header class="hero">
+  <img class="logo" src="logo.jpg" alt="Logo Muspel Logistics">
   <h1>Muspel Distribución y Logística SpA</h1>
-  <p>Reparto de última milla en Osorno y alrededores</p>
+  <p>Reparto de última milla en Osorno y alrededores. Tu pedido, a tu puerta.</p>
+  <div class="ruta" aria-hidden="true">
+    <svg class="van" viewBox="0 0 330 130" fill="none" stroke="#e2b44a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+      <!-- furgón genérico de reparto -->
+      <path d="M14 96V36c0-6 4-10 10-10h150c6 0 10 4 10 10v60" fill="#17140c"/>
+      <path d="M184 44h52c8 0 13 3 17 10l26 30c3 4 5 8 5 14v0c0 6-3 9-9 9H184V44z" fill="#17140c"/>
+      <path d="M196 54h38c5 0 8 2 11 6l16 20h-65V54z" fill="#2a2110"/>
+      <path d="M14 96h18M96 96h92M268 96h28"/>
+      <path d="M46 52h110M46 68h110" stroke="#8a6d25" stroke-width="2"/>
+      <path d="M296 80h8M174 26v70" stroke-width="2"/>
+      <g fill="#0a0a0b"><circle cx="64" cy="102" r="20"/><circle cx="244" cy="102" r="20"/></g>
+      <g stroke="#d7dbe0"><circle cx="64" cy="102" r="20"/><circle cx="244" cy="102" r="20"/></g>
+      <g fill="#e2b44a" stroke="none"><circle cx="64" cy="102" r="6"/><circle cx="244" cy="102" r="6"/></g>
+      <path d="M6 54h-4M10 70H0M8 86H2" stroke="#8a6d25" stroke-width="2"/>
+    </svg>
+    <div class="calle"></div>
+  </div>
 </header>
+
 <main>
-  <section>
-    <h2>Quiénes somos</h2>
-    <p>Somos una empresa de distribución y logística con base en Osorno, región de Los Lagos. Entregamos pedidos de tiendas y empresas directamente en el domicilio de sus clientes, de forma ordenada y puntual.</p>
-  </section>
-  <section>
-    <h2>Qué hacemos</h2>
-    <ul>
-      <li>Reparto de paquetes a domicilio (última milla).</li>
-      <li>Rutas diarias planificadas en Osorno y sectores cercanos.</li>
-      <li>Aviso al cliente sobre el estado de su entrega.</li>
-    </ul>
-  </section>
-  <section>
-    <h2>Avisos por WhatsApp</h2>
-    <p>Si recibiste un mensaje de Muspel, es un aviso sobre la entrega de un pedido que compraste en una tienda asociada. Nuestro número oficial de avisos es <strong>+56 9 3866 8952</strong>.</p>
-  </section>
-  <section>
-    <h2>Dónde estamos</h2>
-    <p>Ruta U-486 km 1,5, Trinquicahuin, Osorno, Chile.</p>
-  </section>
+  <h2 id="servicios">Nuestros servicios</h2>
+  <div class="grid">
+    <div class="card"><h3>Reparto a domicilio</h3><p>Entregamos los pedidos de tiendas y empresas directamente en el domicilio de sus clientes.</p></div>
+    <div class="card"><h3>Rutas planificadas</h3><p>Rutas diarias ordenadas para entregar de forma puntual en Osorno y sectores cercanos.</p></div>
+    <div class="card"><h3>Aviso al cliente</h3><p>Informamos a cada cliente sobre el estado de su entrega para que esté atento a la llegada.</p></div>
+  </div>
+
+  <h2 id="avisos">Avisos por WhatsApp</h2>
+  <div class="aviso">
+    <p style="margin:0">Si recibiste un mensaje de Muspel, es un aviso sobre la entrega de un pedido que compraste en una tienda asociada. Nuestro número oficial de avisos es <strong>+56 9 3866 8952</strong>.</p>
+  </div>
 </main>
+
 <footer>© 2026 Muspel Distribución y Logística SpA · Osorno, Chile</footer>
 </body>
 </html>
