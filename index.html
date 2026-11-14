@@ -110,6 +110,17 @@ details[open]{border-color:var(--oro)}
 .rv.on{opacity:1;transform:none}
 .rv.on.done{transition:transform .25s,box-shadow .25s,border-color .25s,background .2s,color .2s}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+.fcard{background:#F6F0E0;color:#2b2618;border:1px solid #d9c993;border-top:4px solid var(--oro);box-shadow:0 14px 44px rgba(0,0,0,.45)}
+.fcard:hover{transform:none;box-shadow:0 14px 44px rgba(0,0,0,.45);border-color:#d9c993}
+.fcard label{color:#2b2618}
+.fcard input,.fcard select,.fcard textarea{background:#fff;color:#2b2618;border:1px solid #bba66a}
+.fcard input::placeholder,.fcard textarea::placeholder{color:#8a8372}
+.fcard input:focus,.fcard select:focus,.fcard textarea:focus{outline:3px solid var(--oro);border-color:#8A6410}
+.fcard .ayuda{color:#5d5646}
+.fcard .campo-err input,.fcard .campo-err select{border-color:#b3261e;outline:2px solid #b3261e}
+.fcard .err{margin:0;color:#b3261e;font-weight:700;display:none}
+.fcard .err.on{display:block}
 </style>
 </head>
 <body>
@@ -166,7 +177,7 @@ details[open]{border-color:var(--oro)}
 <section class="band t"><div class="wrap">
   <h2 id="cotizador">Cotiza tu envío</h2>
   <p class="lead">Cuéntanos lo básico y te respondemos con el precio por WhatsApp.</p>
-  <div class="card"><form class="form" id="cotiz" onsubmit="return false">
+  <div class="card fcard"><form class="form" id="cotiz" novalidate onsubmit="return false">
     <div><label for="f-neg">Tu nombre o el de tu negocio</label><input id="f-neg" type="text" autocomplete="organization" placeholder="Ej: Tienda Los Lagos"></div>
     <div><label for="f-com">Comuna donde entregamos</label>
       <select id="f-com"><option>Osorno</option><option>La Unión</option><option>Río Bueno</option><option>Purranque</option><option>Río Negro</option><option>Lago Ranco</option><option>Puerto Octay</option><option>Puyehue</option><option>San Pablo</option></select>
@@ -180,8 +191,9 @@ details[open]{border-color:var(--oro)}
       <div><label for="f-rs">Razón social</label><input id="f-rs" type="text" autocomplete="organization" placeholder="Ej: Comercial Los Lagos SpA"></div>
       <div><label for="f-rut">RUT de la empresa</label><input id="f-rut" type="text" inputmode="text" autocomplete="off" placeholder="Ej: 76.123.456-7"></div>
     </div>
-    <div><label for="f-que">Qué vendes (opcional)</label><input id="f-que" type="text" placeholder="Ej: ropa, cosméticos, accesorios"><p class="ayuda">No realizamos el transporte de alimentos ni de productos perecibles.</p></div>
+    <div><label for="f-que">Qué vendes</label><input id="f-que" type="text" required placeholder="Ej: ropa, cosméticos, accesorios"><p class="ayuda">No realizamos el transporte de alimentos ni de productos perecibles.</p></div>
     <div><label for="f-com2">Comentarios (opcional)</label><textarea id="f-com2" rows="3" placeholder="Ej: cuántos pedidos aproximados, horario de retiro, qué necesitas"></textarea><p class="ayuda">Cuéntanos qué necesitas o si hay algo especial que debamos saber.</p></div>
+    <p class="err" id="f-err" role="alert">Completa los campos marcados para poder cotizar.</p>
     <p class="ayuda" style="margin:0">Usamos tus datos solo para responder tu cotización.</p>
     <a class="btn btn-p" id="f-wa" href="#" style="text-align:center">Pedir cotización por WhatsApp</a>
   </form></div>
@@ -232,7 +244,14 @@ details[open]{border-color:var(--oro)}
   }
   ['f-neg','f-com','f-env','f-doc','f-que','f-rs','f-rut','f-com2'].forEach(function(i){g(i).addEventListener('input',act);g(i).addEventListener('change',act)});
   var HOJA="https://script.google.com/macros/s/AKfycbwU-yNV8gYq1gq0ag7DQesQ2_zNjkPc6x-cDr2pU7EsJKblBKd3UIPfl7TowVcjaitkGQ/exec";
-  g('f-wa').addEventListener('click',function(){
+  g('f-wa').addEventListener('click',function(ev){
+    var fac0=g('f-doc').value==='Factura';
+    var req=['f-que'].concat(fac0?['f-rs','f-rut']:[]);
+    var falta=null;
+    ['f-que','f-rs','f-rut'].forEach(function(i){g(i).parentNode.classList.remove('campo-err')});
+    req.forEach(function(i){if(!g(i).value.trim()){g(i).parentNode.classList.add('campo-err');if(!falta)falta=g(i);}});
+    g('f-err').classList.toggle('on',!!falta);
+    if(falta){ev.preventDefault();falta.focus();return;}
     try{
       var d=new URLSearchParams();
       var fac=g('f-doc').value==='Factura';
