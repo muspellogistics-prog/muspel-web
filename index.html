@@ -56,6 +56,8 @@ h2::after{content:"";display:block;width:48px;height:4px;border-radius:4px;backg
 .form label{display:block;font-weight:700;margin-bottom:6px}
 .form input,.form select{width:100%;font:inherit;font-size:16px;padding:12px 14px;border:1px solid #4a3f22;border-radius:12px;background:#101216;color:var(--txt);min-height:48px}
 .form input:focus,.form select:focus{outline:3px solid var(--oro);border-color:var(--oro)}
+.form textarea{width:100%;font:inherit;font-size:16px;padding:12px 14px;border:1px solid #4a3f22;border-radius:12px;background:#101216;color:var(--txt);resize:vertical;min-height:96px}
+.form textarea:focus{outline:3px solid var(--oro);border-color:var(--oro)}
 .form .ayuda{margin:6px 0 0;color:var(--gris);font-size:.92rem}
 details{background:var(--panel);border:1px solid var(--borde);border-radius:14px;padding:4px 18px;margin-bottom:10px}
 summary{cursor:pointer;font-weight:700;padding:14px 0;min-height:48px;list-style-position:outside}
@@ -173,8 +175,14 @@ details[open]{border-color:var(--oro)}
       <select id="f-env"><option>1 a 5</option><option>6 a 20</option><option>21 a 50</option><option>Más de 50</option></select></div>
     <div><label for="f-doc">¿Necesitas boleta o factura?</label>
       <select id="f-doc"><option>Boleta</option><option>Factura</option></select>
-      <p class="ayuda">Si es factura, te pediremos razón social y RUT por WhatsApp.</p></div>
+      <p class="ayuda">Si eliges factura, completa los datos de tu empresa.</p></div>
+    <div id="f-fac" hidden style="display:none;gap:16px">
+      <div><label for="f-rs">Razón social</label><input id="f-rs" type="text" autocomplete="organization" placeholder="Ej: Comercial Los Lagos SpA"></div>
+      <div><label for="f-rut">RUT de la empresa</label><input id="f-rut" type="text" inputmode="text" autocomplete="off" placeholder="Ej: 76.123.456-7"></div>
+    </div>
     <div><label for="f-que">Qué vendes (opcional)</label><input id="f-que" type="text" placeholder="Ej: ropa, cosméticos, accesorios"><p class="ayuda">No realizamos el transporte de alimentos ni de productos perecibles.</p></div>
+    <div><label for="f-com2">Comentarios (opcional)</label><textarea id="f-com2" rows="3" placeholder="Ej: cuántos pedidos aproximados, horario de retiro, qué necesitas"></textarea><p class="ayuda">Cuéntanos qué necesitas o si hay algo especial que debamos saber.</p></div>
+    <p class="ayuda" style="margin:0">Usamos tus datos solo para responder tu cotización.</p>
     <a class="btn btn-p" id="f-wa" href="#" style="text-align:center">Pedir cotización por WhatsApp</a>
   </form></div>
 </div></section>
@@ -210,15 +218,35 @@ details[open]{border-color:var(--oro)}
   var g=function(i){return document.getElementById(i)};
   function act(){
     var neg=g('f-neg').value.trim(), que=g('f-que').value.trim();
+    var fac=g('f-doc').value==='Factura';
+    var box=g('f-fac'); box.hidden=!fac; box.style.display=fac?'grid':'none';
     var t='Hola, quiero cotizar reparto con Muspel.'
       +(neg?'\nNegocio: '+neg:'')
       +'\nComuna de entrega (zona urbana): '+g('f-com').value
       +'\nEnvíos por semana: '+g('f-env').value
       +'\nDocumento: '+g('f-doc').value
-      +(que?'\nVendo: '+que:'');
+      +(fac?'\nRazón social: '+(g('f-rs').value.trim()||'(sin completar)')+'\nRUT: '+(g('f-rut').value.trim()||'(sin completar)'):'')
+      +(que?'\nVendo: '+que:'')
+      +(g('f-com2').value.trim()?'\nComentarios: '+g('f-com2').value.trim():'');
     g('f-wa').href='https://wa.me/56952207386?text='+encodeURIComponent(t);
   }
-  ['f-neg','f-com','f-env','f-doc','f-que'].forEach(function(i){g(i).addEventListener('input',act);g(i).addEventListener('change',act)});
+  ['f-neg','f-com','f-env','f-doc','f-que','f-rs','f-rut','f-com2'].forEach(function(i){g(i).addEventListener('input',act);g(i).addEventListener('change',act)});
+  var HOJA="https://script.google.com/macros/s/AKfycbwU-yNV8gYq1gq0ag7DQesQ2_zNjkPc6x-cDr2pU7EsJKblBKd3UIPfl7TowVcjaitkGQ/exec";
+  g('f-wa').addEventListener('click',function(){
+    try{
+      var d=new URLSearchParams();
+      var fac=g('f-doc').value==='Factura';
+      d.append('negocio',g('f-neg').value.trim());
+      d.append('comuna',g('f-com').value);
+      d.append('envios',g('f-env').value);
+      d.append('documento',g('f-doc').value);
+      d.append('razon',fac?g('f-rs').value.trim():'');
+      d.append('rut',fac?g('f-rut').value.trim():'');
+      d.append('vende',g('f-que').value.trim());
+      d.append('comentarios',g('f-com2').value.trim());
+      fetch(HOJA,{method:'POST',mode:'no-cors',keepalive:true,body:d});
+    }catch(e){}
+  });
   act();
 })();
 </script>
