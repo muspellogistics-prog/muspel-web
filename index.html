@@ -1,86 +1,244 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Muspel Distribución y Logística SpA</title>
-<meta name="description" content="Muspel Distribución y Logística SpA: reparto de última milla en Osorno y alrededores.">
+<title>Muspel Logistics | Reparto y última milla en Osorno</title>
+<meta name="description" content="Tú vendes. Nosotros entregamos. Retiro y entrega a domicilio para emprendedores y empresas en Osorno y alrededores. Cotiza por WhatsApp.">
 <link rel="icon" href="logo.jpg">
 <style>
-:root{--negro:#0a0a0b;--panel:#141416;--oro:#e2b44a;--oro2:#f6d77a;--plata:#d7dbe0;--gris:#9aa1aa}
+:root{--bg:#0c0d10;--bg2:#14161b;--panel:#1a1d23;--oro:#E2B44A;--oro2:#F4D27A;--oroD:#C9A227;--txt:#F3EFE6;--gris:#B4AFA3;--borde:#3a3220}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--negro);color:var(--plata);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.65}
-nav{position:sticky;top:0;z-index:10;background:rgba(10,10,11,.92);backdrop-filter:blur(6px);border-bottom:1px solid #2a2a2e}
-.nav-in{max-width:980px;margin:0 auto;padding:8px 16px;display:flex;align-items:center;justify-content:space-between}
-.marca{display:flex;align-items:center;gap:10px;color:var(--oro);font-weight:800;letter-spacing:.12em;text-decoration:none}
+body{margin:0;background:var(--bg);color:var(--txt);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.65}
+a{color:var(--oro)}
+nav{position:sticky;top:0;z-index:10;background:rgba(12,13,16,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--borde)}
+.nav-in{max-width:1000px;margin:0 auto;padding:8px 16px;display:flex;align-items:center;justify-content:space-between}
+.marca{display:flex;align-items:center;gap:10px;color:var(--txt);font-weight:800;letter-spacing:.14em;text-decoration:none}
 .marca img{height:42px;width:42px;border-radius:50%;object-fit:cover}
-.nav-in a.l{color:var(--plata);text-decoration:none;font-size:.9rem;margin-left:16px}
+.nav-in a.l{color:var(--txt);text-decoration:none;font-size:.9rem;margin-left:18px}
 .nav-in a.l:hover{color:var(--oro)}
-.hero{position:relative;overflow:hidden;text-align:center;padding:48px 16px 0;background:radial-gradient(ellipse at 50% 20%,#2a2110 0%,#0a0a0b 65%)}
-.hero .logo{width:min(380px,78vw);height:auto;border-radius:50%;display:block;margin:0 auto 6px;box-shadow:0 0 60px rgba(226,180,74,.25)}
-.hero h1{margin:14px 0 8px;font-size:clamp(1.4rem,4.5vw,2.2rem);color:#fff;letter-spacing:.02em}
-.hero p{margin:0 auto;max-width:560px;color:var(--gris);font-size:1.05rem}
-.ruta{position:relative;margin-top:30px;height:150px}
-.van{position:absolute;left:50%;bottom:22px;width:min(330px,70vw);transform:translateX(-50%);animation:rebote 1.4s ease-in-out infinite;filter:drop-shadow(0 0 14px rgba(226,180,74,.35))}
-.calle{position:absolute;left:0;right:0;bottom:0;height:24px;background:#111114;border-top:2px solid #2a2a2e}
-.calle::before{content:"";position:absolute;left:0;right:0;top:10px;height:3px;background:repeating-linear-gradient(90deg,var(--oro) 0 36px,transparent 36px 78px);animation:calle 1.2s linear infinite}
-@keyframes calle{to{background-position:-78px 0}}
-@keyframes rebote{50%{transform:translateX(-50%) translateY(-2px)}}
-@media (prefers-reduced-motion:reduce){.van,.calle::before{animation:none}}
-main{max-width:980px;margin:0 auto;padding:44px 16px 30px}
-h2{color:var(--oro);margin:0 0 16px;font-size:1.45rem;letter-spacing:.04em}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-bottom:44px}
-.card{background:var(--panel);border:1px solid #2a2a2e;border-top:3px solid var(--oro);border-radius:12px;padding:22px}
-.card h3{margin:0 0 8px;color:#fff;font-size:1.1rem}
-.card p{margin:0;color:var(--gris)}
-.aviso{background:linear-gradient(135deg,#1b1608,#141416);border:1px solid #4a3a14;border-radius:12px;padding:22px}
-.aviso strong{color:var(--oro2)}
-footer{text-align:center;color:#6b727b;font-size:.85rem;padding:26px 16px 34px;border-top:1px solid #1d1d20}
+.nav-in .cta{background:var(--oro);color:#16130a;padding:9px 18px;border-radius:999px;font-weight:700;font-size:.9rem;text-decoration:none;margin-left:18px}
+.hero{text-align:center;padding:44px 16px 36px;background:radial-gradient(ellipse at 50% 0%,#2b2410 0%,var(--bg) 62%)}
+.hero .logo{width:min(220px,56vw);height:auto;border-radius:50%;display:block;margin:0 auto 18px;box-shadow:0 0 0 2px var(--oroD),0 10px 40px rgba(226,180,74,.25)}
+.pill{display:inline-block;border:2px solid var(--oro);border-radius:999px;padding:6px 20px;font-weight:700;letter-spacing:.06em;font-size:.82rem;text-transform:uppercase;color:var(--txt);margin-bottom:16px}
+.pill b{color:var(--oro)}
+.hero h1{margin:0;font-size:clamp(2.2rem,8vw,4rem);line-height:1.08;letter-spacing:-.01em}
+.hero h1 span{display:block;color:var(--oro)}
+.hero p.sub{margin:16px auto 0;max-width:560px;color:var(--gris);font-size:1.1rem}
+.btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:26px auto 0}
+.btn{display:inline-block;padding:14px 28px;border-radius:999px;font-weight:700;text-decoration:none;font-size:1rem;min-height:48px}
+.btn-p{background:linear-gradient(180deg,var(--oro2),var(--oro));color:#16130a;box-shadow:0 4px 18px rgba(226,180,74,.3)}
+.btn-p:hover{filter:brightness(1.07)}
+.btn-s{border:2px solid var(--oro);color:var(--oro);background:transparent}
+.btn-s:hover{background:rgba(226,180,74,.1)}
+.banner{max-width:1000px;margin:0 auto;padding:0 16px}
+.banner img{display:block;width:100%;height:auto;border-radius:18px;border:1px solid var(--borde);box-shadow:0 10px 40px rgba(0,0,0,.5)}
+.band{padding:56px 16px}
+.band.t{background:var(--bg2)}
+.wrap{max-width:1000px;margin:0 auto}
+h2{margin:0 0 6px;font-size:1.7rem}
+h2::after{content:"";display:block;width:48px;height:4px;border-radius:4px;background:var(--oro);margin:10px 0 22px}
+.lead{color:var(--gris);max-width:640px;margin:0 0 24px}
+.grid,.pasos,.contacto{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.card,.paso{background:var(--panel);border:1px solid var(--borde);border-radius:18px;padding:22px}
+.card{border-top:3px solid var(--oro)}
+.card h3,.paso h3{margin:0 0 6px;font-size:1.1rem}
+.card p,.paso p{margin:0;color:var(--gris)}
+.ic{width:52px;height:52px;border-radius:50%;border:2px solid var(--oro);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.ic svg{width:26px;height:26px;stroke:var(--oro);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.paso .n{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--oro);color:#16130a;font-weight:800;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 14px;padding:0;list-style:none}
+.chips li{border:2px solid var(--oro);border-radius:999px;padding:8px 20px;background:var(--panel);font-weight:600}
+.nota{color:var(--gris);margin:0 0 6px}
+.zona{background:#1f1b10;border:1px solid var(--borde);border-radius:12px;padding:12px 16px;margin:12px 0 0;color:var(--txt)}
+.form{display:grid;gap:16px;max-width:640px}
+.form label{display:block;font-weight:700;margin-bottom:6px}
+.form input,.form select{width:100%;font:inherit;font-size:16px;padding:12px 14px;border:1px solid #4a3f22;border-radius:12px;background:#101216;color:var(--txt);min-height:48px}
+.form input:focus,.form select:focus{outline:3px solid var(--oro);border-color:var(--oro)}
+.form .ayuda{margin:6px 0 0;color:var(--gris);font-size:.92rem}
+details{background:var(--panel);border:1px solid var(--borde);border-radius:14px;padding:4px 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700;padding:14px 0;min-height:48px;list-style-position:outside}
+details p{margin:0 0 14px;color:var(--gris)}
+.contacto .card a{font-weight:600;word-break:break-word}
+.aviso{background:#1f1b10;border:1px solid var(--borde);border-radius:16px;padding:20px}
+.wa-flot{position:fixed;right:16px;bottom:16px;z-index:20;background:linear-gradient(180deg,var(--oro2),var(--oro));color:#16130a;font-weight:800;text-decoration:none;padding:14px 22px;border-radius:999px;box-shadow:0 6px 22px rgba(0,0,0,.55)}
+footer{text-align:center;padding:34px 16px 90px;color:var(--gris);font-size:.9rem;background:var(--bg2);border-top:1px solid var(--borde)}
+footer .lema{display:block;color:var(--oro);letter-spacing:.28em;text-transform:uppercase;font-weight:600;font-size:.8rem;margin-bottom:10px}
+@media (max-width:560px){.nav-in a.l{display:none}.nav-in .cta{margin-left:0}}
+
+/* ---- movimiento ---- */
+@keyframes subir{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes brillo{0%,100%{box-shadow:0 0 0 2px var(--oroD),0 10px 40px rgba(226,180,74,.22)}50%{box-shadow:0 0 0 2px var(--oro2),0 10px 60px rgba(226,180,74,.55)}}
+@keyframes flota{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes zoomlento{from{transform:scale(1)}to{transform:scale(1.08)}}
+@keyframes barrido{0%{transform:translateX(-120%) skewX(-20deg)}60%,100%{transform:translateX(320%) skewX(-20deg)}}
+@keyframes pulso{0%{box-shadow:0 0 0 0 rgba(226,180,74,.55),0 6px 22px rgba(0,0,0,.55)}70%{box-shadow:0 0 0 16px rgba(226,180,74,0),0 6px 22px rgba(0,0,0,.55)}100%{box-shadow:0 0 0 0 rgba(226,180,74,0),0 6px 22px rgba(0,0,0,.55)}}
+@keyframes camino{to{background-position:-80px 0}}
+@keyframes pasa{0%{left:-90px}100%{left:calc(100% + 20px)}}
+@keyframes luces{0%,100%{opacity:.35}50%{opacity:.8}}
+.hero{position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;left:50%;top:-30%;width:900px;height:900px;margin-left:-450px;background:radial-gradient(circle,rgba(226,180,74,.16),transparent 62%);animation:luces 5s ease-in-out infinite;pointer-events:none}
+.hero>*{position:relative}
+.hero .logo{animation:subir .9s ease both,brillo 4s ease-in-out 1s infinite,flota 6s ease-in-out 1s infinite}
+.hero .pill{animation:subir .8s .15s ease both}
+.hero h1{animation:subir .9s .3s ease both}
+.hero h1 span{animation:subir .9s .5s ease both;background:linear-gradient(90deg,var(--oro),var(--oro2),var(--oro));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.sub{animation:subir .9s .7s ease both}
+.hero .btns{animation:subir .9s .9s ease both}
+.btn-p{position:relative;overflow:hidden}
+.btn-p::after{content:"";position:absolute;top:0;left:0;width:40%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);animation:barrido 3.2s ease-in-out infinite}
+.btn{transition:transform .2s,filter .2s}
+.btn:hover{transform:translateY(-2px) scale(1.03)}
+.banner{overflow:hidden}
+.banner .fr{overflow:hidden;border-radius:18px;border:1px solid var(--borde);box-shadow:0 10px 40px rgba(0,0,0,.5)}
+.banner .fr img{border:0;border-radius:0;box-shadow:none;animation:zoomlento 14s ease-in-out infinite alternate}
+.ruta{position:relative;height:64px;max-width:1000px;margin:22px auto 0;overflow:hidden}
+.ruta .via{position:absolute;left:16px;right:16px;bottom:10px;height:3px;background:repeating-linear-gradient(90deg,var(--oro) 0 36px,transparent 36px 80px);animation:camino 1s linear infinite;opacity:.8}
+.ruta .cam{position:absolute;bottom:14px;width:80px;animation:pasa 9s linear infinite}
+.card,.paso,details{transition:transform .25s,box-shadow .25s,border-color .25s}
+.card:hover,.paso:hover{transform:translateY(-6px);box-shadow:0 14px 34px rgba(226,180,74,.18);border-color:var(--oro)}
+.ic{transition:transform .35s,background .35s}
+.card:hover .ic{transform:rotate(-8deg) scale(1.1);background:rgba(226,180,74,.14)}
+.chips li{transition:transform .2s,background .2s,color .2s}
+.chips li:hover{transform:translateY(-3px);background:var(--oro);color:#16130a}
+details[open]{border-color:var(--oro)}
+.wa-flot{animation:pulso 2.4s infinite}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.rv.on{opacity:1;transform:none}
+.rv.on.done{transition:transform .25s,box-shadow .25s,border-color .25s,background .2s,color .2s}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 </style>
 </head>
 <body>
 <nav><div class="nav-in">
   <a class="marca" href="#"><img src="logo.jpg" alt=""><span>MUSPEL</span></a>
-  <div><a class="l" href="#servicios">Servicios</a><a class="l" href="#avisos">Avisos</a></div>
+  <div><a class="l" href="#servicios">Servicios</a><a class="l" href="#como">Cómo funciona</a><a class="l" href="#cobertura">Cobertura</a><a class="l" href="#contacto">Contacto</a><a class="cta" href="#cotizador">Cotizar</a></div>
 </div></nav>
 
 <header class="hero">
   <img class="logo" src="logo.jpg" alt="Logo Muspel Logistics">
-  <h1>Muspel Distribución y Logística SpA</h1>
-  <p>Reparto de última milla en Osorno y alrededores. Tu pedido, a tu puerta.</p>
-  <div class="ruta" aria-hidden="true">
-    <svg class="van" viewBox="0 0 330 130" fill="none" stroke="#e2b44a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
-      <!-- furgón genérico de reparto -->
-      <path d="M14 96V36c0-6 4-10 10-10h150c6 0 10 4 10 10v60" fill="#17140c"/>
-      <path d="M184 44h52c8 0 13 3 17 10l26 30c3 4 5 8 5 14v0c0 6-3 9-9 9H184V44z" fill="#17140c"/>
-      <path d="M196 54h38c5 0 8 2 11 6l16 20h-65V54z" fill="#2a2110"/>
-      <path d="M14 96h18M96 96h92M268 96h28"/>
-      <path d="M46 52h110M46 68h110" stroke="#8a6d25" stroke-width="2"/>
-      <path d="M296 80h8M174 26v70" stroke-width="2"/>
-      <g fill="#0a0a0b"><circle cx="64" cy="102" r="20"/><circle cx="244" cy="102" r="20"/></g>
-      <g stroke="#d7dbe0"><circle cx="64" cy="102" r="20"/><circle cx="244" cy="102" r="20"/></g>
-      <g fill="#e2b44a" stroke="none"><circle cx="64" cy="102" r="6"/><circle cx="244" cy="102" r="6"/></g>
-      <path d="M6 54h-4M10 70H0M8 86H2" stroke="#8a6d25" stroke-width="2"/>
-    </svg>
-    <div class="calle"></div>
+  <span class="pill">Para <b>emprendedores</b> y <b>empresas</b></span>
+  <h1>Tú vendes.<span>Nosotros entregamos.</span></h1>
+  <p class="sub">Reparto y última milla en Osorno y alrededores. Retiramos tus pedidos y los llevamos a la puerta de tu cliente.</p>
+  <div class="btns">
+    <a class="btn btn-p" href="#cotizador">Cotiza por WhatsApp</a>
+    <a class="btn btn-s" href="#como">Cómo funciona</a>
   </div>
 </header>
 
-<main>
-  <h2 id="servicios">Nuestros servicios</h2>
-  <div class="grid">
-    <div class="card"><h3>Reparto a domicilio</h3><p>Entregamos los pedidos de tiendas y empresas directamente en el domicilio de sus clientes.</p></div>
-    <div class="card"><h3>Rutas planificadas</h3><p>Rutas diarias ordenadas para entregar de forma puntual en Osorno y sectores cercanos.</p></div>
-    <div class="card"><h3>Aviso al cliente</h3><p>Informamos a cada cliente sobre el estado de su entrega para que esté atento a la llegada.</p></div>
-  </div>
+<div class="banner"><div class="fr"><img src="van.jpg" alt="Furgón de reparto Muspel junto a cajas, con bosque y volcán de fondo"></div></div>
+<div class="ruta" aria-hidden="true"><div class="via"></div>
+<svg class="cam" viewBox="0 0 90 46" fill="none" stroke="#E2B44A" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><path d="M4 32V8h40v24" fill="#1a1d23"/><path d="M44 14h14l12 12v6H44z" fill="#1a1d23"/><circle cx="20" cy="35" r="6" fill="#0c0d10"/><circle cx="58" cy="35" r="6" fill="#0c0d10"/><path d="M0 14h-0M-2 20h0" /></svg></div>
 
+<section class="band"><div class="wrap">
+  <h2 id="servicios">Qué hacemos por tu negocio</h2>
+  <p class="lead">Tú te dedicas a vender. Nosotros nos encargamos de que cada pedido llegue a su destino.</p>
+  <div class="grid">
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></div><h3>Retiramos en tu puerta</h3><p>Pasamos a buscar tus ventas a tu domicilio o local. Sin viajes ni filas para dejar tus pedidos.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></svg></div><h3>Entregamos a domicilio</h3><p>Directo a la puerta de tu cliente, dentro de la zona urbana de la comuna.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="18" r="2"/><path d="M8 6h6a3 3 0 010 6h-4a3 3 0 000 6h6"/></svg></div><h3>Rutas planificadas</h3><p>Armamos las rutas cada día para entregar de forma ordenada y puntual.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0112 0v5l2 2H4z"/><path d="M10 20a2 2 0 004 0"/></svg></div><h3>Tu cliente, informado</h3><p>Le avisamos por WhatsApp sobre su entrega, para que esté atento cuando lleguemos.</p></div>
+  </div>
+</div></section>
+
+<section class="band t"><div class="wrap">
+  <h2 id="como">Cómo funciona</h2>
+  <div class="pasos">
+    <div class="paso"><span class="n">1</span><h3>Cotizas</h3><p>Nos escribes por WhatsApp qué hay que enviar y a qué comuna. Te respondemos con el precio.</p></div>
+    <div class="paso"><span class="n">2</span><h3>Retiramos</h3><p>Pasamos por tu domicilio o local a retirar tus pedidos.</p></div>
+    <div class="paso"><span class="n">3</span><h3>Entregamos</h3><p>Los llevamos a la puerta de cada cliente y le avisamos por WhatsApp.</p></div>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <h2 id="cobertura">Dónde repartimos</h2>
+  <ul class="chips">
+    <li>Osorno</li><li>La Unión</li><li>Río Bueno</li><li>Purranque</li><li>Río Negro</li><li>Lago Ranco</li><li>Puerto Octay</li><li>Puyehue</li><li>San Pablo</li>
+  </ul>
+  <p class="nota">¿Tu comuna no está en la lista? Escríbenos y la revisamos.</p>
+  <p class="zona"><strong>Importante:</strong> las entregas se realizan dentro de la <strong>zona urbana</strong> de cada comuna.</p>
+  <p class="zona"><strong>Tipo de productos:</strong> por política de la empresa, no realizamos el transporte de alimentos ni de productos perecibles.</p>
+</div></section>
+
+<section class="band t"><div class="wrap">
+  <h2 id="cotizador">Cotiza tu envío</h2>
+  <p class="lead">Cuéntanos lo básico y te respondemos con el precio por WhatsApp.</p>
+  <div class="card"><form class="form" id="cotiz" onsubmit="return false">
+    <div><label for="f-neg">Tu nombre o el de tu negocio</label><input id="f-neg" type="text" autocomplete="organization" placeholder="Ej: Tienda Los Lagos"></div>
+    <div><label for="f-com">Comuna donde entregamos</label>
+      <select id="f-com"><option>Osorno</option><option>La Unión</option><option>Río Bueno</option><option>Purranque</option><option>Río Negro</option><option>Lago Ranco</option><option>Puerto Octay</option><option>Puyehue</option><option>San Pablo</option></select>
+      <p class="ayuda">Entregamos dentro de la zona urbana de la comuna.</p></div>
+    <div><label for="f-env">Cuántos envíos haces por semana</label>
+      <select id="f-env"><option>1 a 5</option><option>6 a 20</option><option>21 a 50</option><option>Más de 50</option></select></div>
+    <div><label for="f-doc">¿Necesitas boleta o factura?</label>
+      <select id="f-doc"><option>Boleta</option><option>Factura</option></select>
+      <p class="ayuda">Si es factura, te pediremos razón social y RUT por WhatsApp.</p></div>
+    <div><label for="f-que">Qué vendes (opcional)</label><input id="f-que" type="text" placeholder="Ej: ropa, cosméticos, accesorios"><p class="ayuda">No realizamos el transporte de alimentos ni de productos perecibles.</p></div>
+    <a class="btn btn-p" id="f-wa" href="#" style="text-align:center">Pedir cotización por WhatsApp</a>
+  </form></div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <h2 id="preguntas">Preguntas frecuentes</h2>
+  <details><summary>¿Entregan boleta o factura?</summary><p>Las dos. Si necesitas factura, nos indicas razón social y RUT al cotizar. Si no, te emitimos boleta.</p></details>
+  <details><summary>¿Entregan en el campo o solo en la zona urbana?</summary><p>Las entregas se realizan dentro de la zona urbana de cada comuna.</p></details>
+  <details><summary>¿Qué productos no transportan?</summary><p>No transportamos alimentos ni productos perecibles.</p></details>
+  <details><summary>¿El precio es el mismo para todas las comunas?</summary><p>No. El valor depende de la distancia desde Osorno y del tamaño del pedido. Escríbenos y te cotizamos.</p></details>
+  <details><summary>¿Cómo se entera mi cliente de la entrega?</summary><p>Le enviamos un aviso por WhatsApp para que esté atento cuando lleguemos.</p></details>
+</div></section>
+
+<section class="band t"><div class="wrap">
+  <h2 id="contacto">Contacto</h2>
+  <div class="contacto">
+    <div class="card"><h3>WhatsApp</h3><p><a href="https://wa.me/56952207386?text=Hola%2C%20quiero%20cotizar%20un%20servicio%20de%20reparto%20con%20Muspel.">+56 9 5220 7386</a></p></div>
+    <div class="card"><h3>Correo</h3><p><a href="mailto:muspel.logistics@gmail.com">muspel.logistics@gmail.com</a></p></div>
+    <div class="card"><h3>Ubicación</h3><p>Osorno, Chile</p></div>
+    <div class="card"><h3>Instagram</h3><p><a href="https://www.instagram.com/muspel.logistics/">@muspel.logistics</a></p></div>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap">
   <h2 id="avisos">Avisos por WhatsApp</h2>
   <div class="aviso">
-    <p style="margin:0">Si recibiste un mensaje de Muspel, es un aviso sobre la entrega de un pedido que compraste en una tienda asociada. Nuestro número oficial de avisos es <strong>+56 9 3866 8952</strong>.</p>
+    <p style="margin:0">Si recibiste un mensaje de Muspel, es un aviso sobre la entrega de un pedido que compraste en una tienda asociada.</p>
   </div>
-</main>
+</div></section>
 
-<footer>© 2026 Muspel Distribución y Logística SpA · Osorno, Chile</footer>
+<script>
+(function(){
+  var g=function(i){return document.getElementById(i)};
+  function act(){
+    var neg=g('f-neg').value.trim(), que=g('f-que').value.trim();
+    var t='Hola, quiero cotizar reparto con Muspel.'
+      +(neg?'\nNegocio: '+neg:'')
+      +'\nComuna de entrega (zona urbana): '+g('f-com').value
+      +'\nEnvíos por semana: '+g('f-env').value
+      +'\nDocumento: '+g('f-doc').value
+      +(que?'\nVendo: '+que:'');
+    g('f-wa').href='https://wa.me/56952207386?text='+encodeURIComponent(t);
+  }
+  ['f-neg','f-com','f-env','f-doc','f-que'].forEach(function(i){g(i).addEventListener('input',act);g(i).addEventListener('change',act)});
+  act();
+})();
+</script>
+
+
+<script>
+(function(){
+  var sel='h2,.lead,.card,.paso,.chips li,.nota,.zona,details,.aviso';
+  var els=document.querySelectorAll(sel);
+  if(!('IntersectionObserver' in window)){return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');var t=e.target;io.unobserve(t);setTimeout(function(){t.style.transitionDelay='0ms';t.classList.add('done');},1200);}})},{threshold:.12});
+  els.forEach(function(el,i){
+    el.classList.add('rv');
+    var sib=Array.prototype.indexOf.call(el.parentNode.children,el);
+    el.style.transitionDelay=Math.min(sib,6)*90+'ms';
+    io.observe(el);
+  });
+})();
+</script>
+<a class="wa-flot" href="https://wa.me/56952207386?text=Hola%2C%20quiero%20cotizar%20un%20servicio%20de%20reparto%20con%20Muspel.">Cotiza por WhatsApp</a>
+<footer><span class="lema">Tu envío. Nuestro compromiso.</span>© 2026 Muspel Distribución y Logística SpA · Osorno, Chile</footer>
 </body>
 </html>
