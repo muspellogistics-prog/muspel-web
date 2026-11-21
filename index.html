@@ -4,8 +4,38 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Muspel Logistics | Reparto y última milla en Osorno</title>
-<meta name="description" content="Tú vendes. Nosotros entregamos. Retiro y entrega a domicilio para emprendedores y empresas en Osorno y alrededores. Cotiza por WhatsApp.">
+<meta name="description" content="Tú vendes. Nosotros entregamos. Retiro por la tarde y entrega según el día de reparto de cada comuna para emprendedores y empresas en Osorno y 8 comunas más. Cotiza por WhatsApp.">
 <link rel="icon" href="logo.jpg">
+<link rel="canonical" href="https://muspel.cl/">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Muspel Logistics">
+<meta property="og:title" content="Muspel Logistics | Reparto y última milla en Osorno">
+<meta property="og:description" content="Tú vendes. Nosotros entregamos. Retiro por la tarde y entrega en Osorno y 8 comunas más para emprendedores y empresas.">
+<meta property="og:url" content="https://muspel.cl/">
+<meta property="og:image" content="https://muspel.cl/logo.jpg">
+<meta property="og:locale" content="es_CL">
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@type": "LocalBusiness",
+ "name": "Muspel Logistics",
+ "legalName": "Muspel Distribución y Logística SpA",
+ "description": "Retiro por la tarde y entrega en Osorno y 8 comunas más para emprendedores y empresas. Reparto y última milla.",
+ "url": "https://muspel.cl/",
+ "logo": "https://muspel.cl/logo.jpg",
+ "image": "https://muspel.cl/logo.jpg",
+ "email": "muspel.logistics@gmail.com",
+ "address": {
+  "@type": "PostalAddress",
+  "addressLocality": "Osorno",
+  "addressRegion": "Región de Los Lagos",
+  "addressCountry": "CL"
+ },
+ "areaServed": [{"@type":"City","name":"Osorno"},{"@type":"City","name":"La Unión"},{"@type":"City","name":"Río Bueno"},{"@type":"City","name":"Purranque"},{"@type":"City","name":"Río Negro"},{"@type":"City","name":"Lago Ranco"},{"@type":"City","name":"Puerto Octay"},{"@type":"City","name":"Puyehue"},{"@type":"City","name":"San Pablo"}],
+ "sameAs": [
+  "https://www.instagram.com/muspel.logistics"
+ ]
+}</script>
 <style>
 :root{--bg:#0c0d10;--bg2:#14161b;--panel:#1a1d23;--oro:#E2B44A;--oro2:#F4D27A;--oroD:#C9A227;--txt:#F3EFE6;--gris:#B4AFA3;--borde:#3a3220}
 *{box-sizing:border-box}
@@ -121,6 +151,31 @@ details[open]{border-color:var(--oro)}
 .fcard .campo-err input,.fcard .campo-err select{border-color:#b3261e;outline:2px solid #b3261e}
 .fcard .err{margin:0;color:#b3261e;font-weight:700;display:none}
 .fcard .err.on{display:block}
+
+/* ---- tema mixto: portada oscura, contenido claro ---- */
+.hero,.hero h1{color:#F3EFE6}
+.oscuro{background:#0c0d10;padding-bottom:22px}
+.oscuro .ruta{margin-top:18px}
+body{background:#F8F4EA;color:#1f1c14}
+a{color:#7A560B}
+.band{background:#F8F4EA}
+.band.t{background:#EFE7D3}
+h2{color:#1a1710}
+.lead,.nota,.card p,.paso p,details p,.ayuda{color:#524c3c}
+.card,.paso,details{background:#fff;border-color:#e0d3a6;box-shadow:0 2px 10px rgba(60,45,10,.07)}
+.card h3,.paso h3,summary{color:#1a1710}
+.card:hover,.paso:hover{box-shadow:0 12px 28px rgba(120,90,10,.18);border-color:var(--oroD)}
+.ic{border-color:var(--oroD)}
+.ic svg{stroke:#8A6410}
+.chips li{background:#fff;color:#1a1710;border-color:var(--oroD)}
+.chips li:hover{background:var(--oro);color:#16130a}
+.zona,.aviso{background:#FFF4D2;border:1px solid #e0d3a6;color:#1f1c14}
+.zona strong{color:#1a1710}
+.fcard{background:#fff;color:#1f1c14;border:1px solid #e0d3a6;border-top:4px solid var(--oro);box-shadow:0 10px 30px rgba(60,45,10,.12)}
+.fcard:hover{box-shadow:0 10px 30px rgba(60,45,10,.12)}
+.contacto .card a{color:#6B4A08}
+.btn-s{color:var(--oro)}
+.wa-flot{box-shadow:0 6px 22px rgba(0,0,0,.35)}
 </style>
 </head>
 <body>
@@ -131,56 +186,66 @@ details[open]{border-color:var(--oro)}
 
 <header class="hero">
   <img class="logo" src="logo.jpg" alt="Logo Muspel Logistics">
-  <span class="pill">Para <b>emprendedores</b> y <b>empresas</b></span>
+  <span class="pill">Soluciones de última milla para <b>emprendedores</b> y <b>empresas</b></span>
   <h1>Tú vendes.<span>Nosotros entregamos.</span></h1>
-  <p class="sub">Reparto y última milla en Osorno y alrededores. Retiramos tus pedidos y los llevamos a la puerta de tu cliente.</p>
+  <p class="sub">Retiramos en tu local por la tarde y entregamos a tu cliente en el siguiente día de reparto, en la zona urbana de Osorno, La Unión, Río Bueno, Purranque, Río Negro, Lago Ranco, Puerto Octay, Puyehue y San Pablo.</p>
   <div class="btns">
-    <a class="btn btn-p" href="#cotizador">Cotiza por WhatsApp</a>
+    <a class="btn btn-p" href="https://wa.me/56952207386?text=Hola%2C%20quiero%20informaci%C3%B3n%20del%20servicio%20de%20reparto%20de%20Muspel.">Escríbenos por WhatsApp</a>
     <a class="btn btn-s" href="#como">Cómo funciona</a>
   </div>
 </header>
 
-<div class="banner"><div class="fr"><img src="van.jpg" alt="Furgón de reparto Muspel junto a cajas, con bosque y volcán de fondo"></div></div>
+<div class="oscuro"><div class="banner"><div class="fr"><img src="van.jpg" alt="Furgón de reparto Muspel junto a cajas, con bosque y volcán de fondo"></div></div>
 <div class="ruta" aria-hidden="true"><div class="via"></div>
 <svg class="cam" viewBox="0 0 90 46" fill="none" stroke="#E2B44A" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"><path d="M4 32V8h40v24" fill="#1a1d23"/><path d="M44 14h14l12 12v6H44z" fill="#1a1d23"/><circle cx="20" cy="35" r="6" fill="#0c0d10"/><circle cx="58" cy="35" r="6" fill="#0c0d10"/><path d="M0 14h-0M-2 20h0" /></svg></div>
+</div>
 
 <section class="band"><div class="wrap">
-  <h2 id="servicios">Qué hacemos por tu negocio</h2>
-  <p class="lead">Tú te dedicas a vender. Nosotros nos encargamos de que cada pedido llegue a su destino.</p>
+  <h2 id="servicios">Nuestros servicios</h2>
+  <p class="lead">Nos encargamos del retiro, transporte y entrega de tus pedidos, con un servicio confiable, eficiente y a la medida de tu negocio.</p>
   <div class="grid">
-    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></div><h3>Retiramos en tu puerta</h3><p>Pasamos a buscar tus ventas a tu domicilio o local. Sin viajes ni filas para dejar tus pedidos.</p></div>
-    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></svg></div><h3>Entregamos a domicilio</h3><p>Directo a la puerta de tu cliente, dentro de la zona urbana de la comuna.</p></div>
-    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="18" r="2"/><path d="M8 6h6a3 3 0 010 6h-4a3 3 0 000 6h6"/></svg></div><h3>Rutas planificadas</h3><p>Armamos las rutas cada día para entregar de forma ordenada y puntual.</p></div>
-    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0112 0v5l2 2H4z"/><path d="M10 20a2 2 0 004 0"/></svg></div><h3>Tu cliente, informado</h3><p>Le avisamos por WhatsApp sobre su entrega, para que esté atento cuando lleguemos.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5l8 4.5 8-4.5"/><path d="M12 12v9"/></svg></div><h3>Distribución para tu negocio</h3><p>Entregamos los pedidos de tu tienda a tus clientes, con una ruta armada cada día.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></svg></div><h3>Retiros programados</h3><p>Pasamos por tu local o bodega por la tarde. Sin viajes ni filas para despachar.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9 15l2 2 4-4"/></svg></div><h3>Entregas a domicilio</h3><p>Directo a la puerta de tu cliente, en el día de reparto de su comuna y dentro de la zona urbana.</p></div>
   </div>
 </div></section>
 
 <section class="band t"><div class="wrap">
+  <h2 id="porque">Por qué elegirnos</h2>
+  <div class="grid">
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg></div><h3>Cumplimiento de entregas</h3><p>Armamos las rutas cada día para entregar de forma ordenada y puntual.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16V11a6 6 0 0112 0v5l2 2H4z"/><path d="M10 20a2 2 0 004 0"/></svg></div><h3>Tu cliente, informado</h3><p>Tu cliente está informado durante todo el recorrido de su pedido, hasta que lo recibe.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c1-4 4-6 7-6s6 2 7 6"/></svg></div><h3>Atención personalizada</h3><p>Hablas directo con el equipo de Muspel por WhatsApp.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16"/><path d="M6 16v-4M11 16V9M16 16v-7M20 7l-4-4M20 7h-4M20 7v4"/></svg></div><h3>Flexibilidad según tu operación</h3><p>Nos adaptamos a tu volumen, ya sea que envíes pocos pedidos o muchos.</p></div>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap">
   <h2 id="como">Cómo funciona</h2>
   <div class="pasos">
     <div class="paso"><span class="n">1</span><h3>Cotizas</h3><p>Nos escribes por WhatsApp qué hay que enviar y a qué comuna. Te respondemos con el precio.</p></div>
     <div class="paso"><span class="n">2</span><h3>Retiramos</h3><p>Pasamos por tu domicilio o local a retirar tus pedidos.</p></div>
-    <div class="paso"><span class="n">3</span><h3>Entregamos</h3><p>Los llevamos a la puerta de cada cliente y le avisamos por WhatsApp.</p></div>
+    <div class="paso"><span class="n">3</span><h3>Entregamos</h3><p>Los llevamos a la puerta de cada cliente en el día de reparto de su comuna.</p></div>
   </div>
 </div></section>
 
-<section class="band"><div class="wrap">
+<section class="band t"><div class="wrap">
   <h2 id="cobertura">Dónde repartimos</h2>
   <ul class="chips">
     <li>Osorno</li><li>La Unión</li><li>Río Bueno</li><li>Purranque</li><li>Río Negro</li><li>Lago Ranco</li><li>Puerto Octay</li><li>Puyehue</li><li>San Pablo</li>
   </ul>
-  <p class="nota">¿Tu comuna no está en la lista? Escríbenos y la revisamos.</p>
+  <p class="nota">¿Tu comuna no está en la lista? Escríbenos y revisamos si podemos llegar.</p>
   <p class="zona"><strong>Importante:</strong> las entregas se realizan dentro de la <strong>zona urbana</strong> de cada comuna.</p>
   <p class="zona"><strong>Tipo de productos:</strong> por política de la empresa, no realizamos el transporte de alimentos ni de productos perecibles.</p>
 </div></section>
 
-<section class="band t"><div class="wrap">
+<section class="band"><div class="wrap">
   <h2 id="cotizador">Cotiza tu envío</h2>
   <p class="lead">Cuéntanos lo básico y te respondemos con el precio por WhatsApp.</p>
   <div class="card fcard"><form class="form" id="cotiz" novalidate onsubmit="return false">
     <div><label for="f-neg">Tu nombre o el de tu negocio</label><input id="f-neg" type="text" autocomplete="organization" placeholder="Ej: Tienda Los Lagos"></div>
     <div><label for="f-com">Comuna donde entregamos</label>
-      <select id="f-com"><option>Osorno</option><option>La Unión</option><option>Río Bueno</option><option>Purranque</option><option>Río Negro</option><option>Lago Ranco</option><option>Puerto Octay</option><option>Puyehue</option><option>San Pablo</option></select>
+      <select id="f-com"><option>Osorno</option><option>La Unión</option><option>Río Bueno</option><option>Purranque</option><option>Río Negro</option><option>Lago Ranco</option><option>Puerto Octay</option><option>Puyehue</option><option>San Pablo</option><option>Otra comuna (consultar)</option></select>
       <p class="ayuda">Entregamos dentro de la zona urbana de la comuna.</p></div>
     <div><label for="f-env">Cuántos envíos haces por semana</label>
       <select id="f-env"><option>1 a 5</option><option>6 a 20</option><option>21 a 50</option><option>Más de 50</option></select></div>
@@ -199,7 +264,7 @@ details[open]{border-color:var(--oro)}
   </form></div>
 </div></section>
 
-<section class="band"><div class="wrap">
+<section class="band t"><div class="wrap">
   <h2 id="preguntas">Preguntas frecuentes</h2>
   <details><summary>¿Entregan boleta o factura?</summary><p>Las dos. Si necesitas factura, nos indicas razón social y RUT al cotizar. Si no, te emitimos boleta.</p></details>
   <details><summary>¿Entregan en el campo o solo en la zona urbana?</summary><p>Las entregas se realizan dentro de la zona urbana de cada comuna.</p></details>
@@ -208,17 +273,17 @@ details[open]{border-color:var(--oro)}
   <details><summary>¿Cómo se entera mi cliente de la entrega?</summary><p>Le enviamos un aviso por WhatsApp para que esté atento cuando lleguemos.</p></details>
 </div></section>
 
-<section class="band t"><div class="wrap">
+<section class="band"><div class="wrap">
   <h2 id="contacto">Contacto</h2>
   <div class="contacto">
-    <div class="card"><h3>WhatsApp</h3><p><a href="https://wa.me/56952207386?text=Hola%2C%20quiero%20cotizar%20un%20servicio%20de%20reparto%20con%20Muspel.">+56 9 5220 7386</a></p></div>
+    <div class="card"><h3>WhatsApp</h3><p><a href="https://wa.me/56952207386?text=Hola%2C%20quiero%20cotizar%20un%20servicio%20de%20reparto%20con%20Muspel.">Escríbenos por WhatsApp</a></p></div>
     <div class="card"><h3>Correo</h3><p><a href="mailto:muspel.logistics@gmail.com">muspel.logistics@gmail.com</a></p></div>
     <div class="card"><h3>Ubicación</h3><p>Osorno, Chile</p></div>
     <div class="card"><h3>Instagram</h3><p><a href="https://www.instagram.com/muspel.logistics/">@muspel.logistics</a></p></div>
   </div>
 </div></section>
 
-<section class="band"><div class="wrap">
+<section class="band t"><div class="wrap">
   <h2 id="avisos">Avisos por WhatsApp</h2>
   <div class="aviso">
     <p style="margin:0">Si recibiste un mensaje de Muspel, es un aviso sobre la entrega de un pedido que compraste en una tienda asociada.</p>
@@ -263,7 +328,7 @@ details[open]{border-color:var(--oro)}
       d.append('rut',fac?g('f-rut').value.trim():'');
       d.append('vende',g('f-que').value.trim());
       d.append('comentarios',g('f-com2').value.trim());
-      fetch(HOJA,{method:'POST',mode:'no-cors',keepalive:true,body:d});
+      if(/(^|\.)muspel\.cl$/.test(location.hostname)){fetch(HOJA,{method:'POST',mode:'no-cors',keepalive:true,body:d});}
     }catch(e){}
   });
   act();
@@ -285,7 +350,7 @@ details[open]{border-color:var(--oro)}
   });
 })();
 </script>
-<a class="wa-flot" href="https://wa.me/56952207386?text=Hola%2C%20quiero%20cotizar%20un%20servicio%20de%20reparto%20con%20Muspel.">Cotiza por WhatsApp</a>
+<a class="wa-flot" href="https://wa.me/56952207386?text=Hola%2C%20quiero%20cotizar%20un%20servicio%20de%20reparto%20con%20Muspel.">WhatsApp</a>
 <footer><span class="lema">Tu envío. Nuestro compromiso.</span>© 2026 Muspel Distribución y Logística SpA · Osorno, Chile</footer>
 </body>
 </html>
