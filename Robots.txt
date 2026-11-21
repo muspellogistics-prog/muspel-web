@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://muspel.cl/sitemap.xml
